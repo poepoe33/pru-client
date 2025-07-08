@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>保誠保險 - 您的專屬保障方案</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light grey background */
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+        }
+        .section-title {
+            color: #E30026; /* Prudential Red */
+            font-weight: 700;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        .btn-primary {
+            background-color: #E30026; /* Prudential Red */
+            color: #ffffff;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #c00020;
+        }
+        .feature-icon {
+            color: #E30026;
+        }
+        .detail-content {
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            overflow: hidden; /* Hidden when closed */
+            max-height: 0;
+            opacity: 0;
+        }
+        .detail-content.open {
+            max-height: 500px; /* Adjust based on max content height */
+            opacity: 1;
+            overflow-y: auto; /* Allow vertical scrolling when open */
+        }
+        .table-container {
+            overflow-x: auto; /* Enable horizontal scrolling for tables on small screens */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        }
+        table {
+            min-width: 600px; /* Ensure table is wide enough to trigger scroll on small screens */
+            width: 100%; /* Still allow it to take full width if available */
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 0.75rem;
+            text-align: left;
+            white-space: nowrap; /* Prevent text wrapping in table cells */
+        }
+        th {
+            background-color: #f8fafc;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8">
+        <!-- Header Section -->
+        <header class="w-full container text-center mb-8">
+            <div class="flex items-center justify-center mb-4">
+                <!-- Placeholder for Prudential Logo - Ideally, use an SVG or proper image -->
+                <img src="https://placehold.co/150x50/E30026/FFFFFF?text=PRUDENTIAL" alt="Prudential Logo" class="h-12 mr-3 rounded">
+                <h1 class="text-3xl sm:text-4xl font-bold text-gray-800">保誠保險</h1>
+            </div>
+            <p class="text-lg text-gray-600">用心聆聽 實現您心</p>
+        </header>
+
+        <!-- About Us / Mission Section -->
+        <section class="w-full container card p-6 mb-8">
+            <h2 class="text-2xl font-bold section-title mb-4">我們的宗旨</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                保障每個人生，誠就每個未來。自1964年起，保誠一直為香港市民提供多元化的理財策劃服務及產品。2023年，保誠保險於澳門設立分行，為當地市民提供健康保障及金融解決方案，業務遍佈整個大灣區。
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <p class="text-sm font-semibold text-gray-600">信貸評級* (截至2024年1月12日)</p>
+                    <p class="text-xl font-bold text-gray-800">標準普爾: A, 穆迪: A2, 惠譽: A-</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <p class="text-sm font-semibold text-gray-600">致力為大眾提供優質醫療健康保障</p>
+                    <p class="text-xl font-bold text-gray-800">超過130萬客戶在香港受保障</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Section -->
+        <section class="w-full container card p-6 mb-8">
+            <h2 class="text-2xl font-bold section-title mb-4">獎項殊榮</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="flex flex-col items-center">
+                    <span class="text-5xl feature-icon mb-2">🏆</span>
+                    <p class="font-semibold text-gray-800">2023年榮獲多個獎項</p>
+                    <p class="text-sm text-gray-600">6項傑出大獎，5項年度三強</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-5xl feature-icon mb-2">🌟</span>
+                    <p class="font-semibold text-gray-800">Bloomberg Businessweek 2023</p>
+                    <p class="text-sm text-gray-600">共獲10個卓越大獎，年度品牌保險公司</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-5xl feature-icon mb-2">🏅</span>
+                    <p class="font-semibold text-gray-800">FINANCIAL EDUCATION AND ESG LEADERSHIP</p>
+                    <p class="text-sm text-gray-600">企業社會責任領袖獎</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Summary Section -->
+        <section class="w-full container card p-6 mb-8">
+            <h2 class="text-2xl font-bold section-title mb-4">保費說明</h2>
+            <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                <p class="text-lg font-semibold text-gray-800 mb-2">投保時每年總保費: 6,063.80 港元</p>
+                <div class="ml-4 mt-2 text-gray-700">
+                    <p class="mb-1"><strong>基本計劃「誠保一生」危疾保 (CIM3M) 附有升級保障 (CIME3):</strong> 1,506.96 港元 (年繳)</p>
+                    <p><strong>附加保障終身保醫療計劃 (MLPM) - 普通病房:</strong> 4,556.84 港元 (年繳)</p>
+                    <p class="text-sm text-gray-600 mt-2">
+                        *終身保醫療計劃普通病房月繳保費約為 719.08 港元。
+                    </p>
+                </div>
+                <p class="text-sm text-gray-600 mt-4">
+                    備註: 保費並非保證，我們有權在每個保單周年日基於不同因素，如索償經驗、投資表現及績保經驗，以及預期未來索價成本，檢討和調整特定風險級別的保費率。除非我們於保單周年日前向您發出通知，否則保費將不會調整。
+                </p>
+
+                <!-- 20-Year Detailed Premium Table moved here -->
+                <div class="card mt-6 mb-4">
+                    <div class="flex justify-between items-center cursor-pointer p-4" onclick="toggleDetails(this)">
+                        <h3 class="font-semibold text-lg text-gray-800">📊 20年每年保費 (港元)</h3>
+                        <span class="toggle-icon text-gray-600 text-2xl font-bold">+</span>
+                    </div>
+                    <div class="detail-content p-4 border-t border-gray-100 hidden">
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>保單年度</th>
+                                        <th>受保人年齡 (下次生日)</th>
+                                        <th>危疾保費 (港元)</th>
+                                        <th>醫療保費 (港元)</th>
+                                        <th>每年繳付保費總和 (港元)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1</td><td>2</td><td>1,506.96</td><td>5,260.72</td><td>6,767.68</td></tr>
+                                    <tr><td>2</td><td>3</td><td>1,506.96</td><td>4,952.32</td><td>6,459.28</td></tr>
+                                    <tr><td>3</td><td>4</td><td>1,506.96</td><td>4,584.48</td><td>6,091.44</td></tr>
+                                    <tr><td>4</td><td>5</td><td>1,506.96</td><td>4,140.56</td><td>5,647.52</td></tr>
+                                    <tr><td>5</td><td>6</td><td>1,506.96</td><td>3,702.72</td><td>5,209.68</td></tr>
+                                    <tr><td>6</td><td>7</td><td>1,506.96</td><td>3,437.28</td><td>4,944.24</td></tr>
+                                    <tr><td>7</td><td>8</td><td>1,506.96</td><td>3,122.64</td><td>4,629.60</td></tr>
+                                    <tr><td>8</td><td>9</td><td>1,506.96</td><td>2,893.84</td><td>4,400.80</td></tr>
+                                    <tr><td>9</td><td>10</td><td>1,506.96</td><td>2,879.04</td><td>4,386.00</td></tr>
+                                    <tr><td>10</td><td>11</td><td>1,506.96</td><td>2,875.60</td><td>4,382.56</td></tr>
+                                    <tr><td>11</td><td>12</td><td>1,506.96</td><td>2,872.24</td><td>4,379.20</td></tr>
+                                    <tr><td>12</td><td>13</td><td>1,506.96</td><td>2,869.36</td><td>4,376.32</td></tr>
+                                    <tr><td>13</td><td>14</td><td>1,506.96</td><td>2,865.84</td><td>4,372.80</td></tr>
+                                    <tr><td>14</td><td>15</td><td>1,506.96</td><td>2,862.64</td><td>4,369.60</td></tr>
+                                    <tr><td>15</td><td>16</td><td>1,506.96</td><td>2,958.64</td><td>4,465.60</td></tr>
+                                    <tr><td>16</td><td>17</td><td>1,506.96</td><td>3,054.40</td><td>4,561.36</td></tr>
+                                    <tr><td>17</td><td>18</td><td>1,506.96</td><td>3,150.48</td><td>4,657.44</td></tr>
+                                    <tr><td>18</td><td>19</td><td>1,506.96</td><td>3,246.32</td><td>4,753.28</td></tr>
+                                    <tr><td>19</td><td>20</td><td>1,506.96</td><td>3,341.92</td><td>4,848.88</td></tr>
+                                    <tr><td>20</td><td>21</td><td>1,506.96</td><td>3,375.12</td><td>4,882.08</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-gray-600 text-sm mt-4 text-center">
+                            備註: 危疾保費為基本計劃「誠保一生」危疾保的每年保費。<br/>
+                            醫療保費為「終身保醫療計劃」附加保障的每年保費，根據您提供的保費表數據提取。<br/>
+                            實際保費並非保證，可能因應保單條款、受保人風險級別、醫療費用通脹等因素而調整。<br/>
+                            金額以四捨五入方式調整至小數點後兩位。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Section: Critical Illness Plan -->
+        <section class="w-full container card p-6 mb-8">
+            <h2 class="text-2xl font-bold section-title mb-4">「誠保一生」危疾保</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                守護您孩子的每一個人生階段，提供全面的危疾保障。點擊下方項目查看詳情。
+            </p>
+            
+            <!-- Benefit Item: 兒童疾病保障 -->
+            <div class="card mb-4">
+                <div class="flex justify-between items-center cursor-pointer p-4" onclick="toggleDetails(this)">
+                    <h3 class="font-semibold text-lg text-gray-800">👶 兒童疾病保障</h3>
+                    <span class="toggle-icon text-gray-600 text-2xl font-bold">+</span>
+                </div>
+                <div class="detail-content p-4 border-t border-gray-100 hidden">
+                    <p class="text-gray-700 mb-2"><strong>保障額:</strong> 嚴重兒童病況: 基本保額的20% (23,400 港元)；次級嚴重兒童病況: 基本保額的5% (5,850 港元)</p>
+                    <p class="text-gray-600 text-sm">
+                        <strong>說明:</strong> 針對多種嚴重兒童病況和次級嚴重兒童病況，每項病況及每一組別各支付1次賠償。總賠償金額受限於基本保額的95%。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit Item: 早期嚴重疾病保障 -->
+            <div class="card mb-4">
+                <div class="flex justify-between items-center cursor-pointer p-4" onclick="toggleDetails(this)">
+                    <h3 class="font-semibold text-lg text-gray-800">🩺 早期嚴重疾病保障</h3>
+                    <span class="toggle-icon text-gray-600 text-2xl font-bold">+</span>
+                </div>
+                <div class="detail-content p-4 border-t border-gray-100 hidden">
+                    <p class="text-gray-700 mb-2"><strong>保障額:</strong> 冠狀動脈血管成形術/原位癌/早期甲狀腺或前列腺癌/次級侵害性惡性腫瘤: 基本保額的25% (29,250 港元)；其他45項早期嚴重病況: 基本保額的20% (23,400 港元)</p>
+                    <p class="text-gray-600 text-sm">
+                        <strong>說明:</strong> 本保障為每項早期嚴重病況支付1次賠償，惟冠狀動脈血管成形術及原位癌最多可分別索償2次。總賠償金額受限於基本保額的95%。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit Item: 深切治療保障 -->
+            <div class="card mb-4">
+                <div class="flex justify-between items-center cursor-pointer p-4" onclick="toggleDetails(this)">
+                    <h3 class="font-semibold text-lg text-gray-800">🏥 深切治療保障</h3>
+                    <span class="toggle-icon text-gray-600 text-2xl font-bold">+</span>
+                </div>
+                <div class="detail-content p-4 border-t border-gray-100 hidden">
+                    <p class="text-gray-700 mb-2"><strong>保障額:</strong> 合資格的深切治療部留醫: 基本保額的20% (23,400 港元)。如於香港或澳門境外，調整至基本保額的10%。</p>
+                    <p class="text-gray-600 text-sm">
+                        <strong>說明:</strong> 針對因醫療需要於深切治療部連續留醫3天或以上的情況。本保障只支付1次賠償。總賠償金額受限於基本保額的95%。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit Item: 嚴重疾病保障 -->
+            <div class="card mb-4">
+                <div class="flex justify-between items-center cursor-pointer p-4" onclick="toggleDetails(this)">
+                    <h3 class="font-semibold text-lg text-gray-800">🛡️ 嚴重疾病保障</h3>
+                    <span class="toggle-icon text-gray-600 text-2xl font-bold">+</span>
+                </div>
+                <div class="detail-content p-4 border-t border-gray-100 hidden">
+                    <p class="text-gray-700 mb-2"><strong>保障額:</strong> 56項嚴重病況: 基本保額的100% (117,000 港元) + 特別紅利的面值 (如適用)</p>
+                    <p class="text-gray-600 text-sm">
+                        <strong>說明:</strong> 涵蓋56項嚴重病況，只支付1次賠償。支付後，兒童疾病保障、早期嚴重疾病保障、深切治療保障、身故保障及退保價值將終止。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit Item: 升級保障 -->
+            <div class="card mb-4">
+                <div class="flex justify-between items-center cursor-pointer p-4" onclick="toggleDetails(this)">
+                    <h3 class="font-semibold text-lg text-gray-800">📈 升級保障</h3>
+                    <span class="toggle-icon text-gray-600 text-2xl font-bold">+</span>
+                </div>
+                <div class="detail-content p-4 border-t border-gray-100 hidden">
+                    <p class="text-gray-700 mb-2"><strong>保障額:</strong> 於第10個保單周年日或之前確診56項嚴重病況或身故: 基本保額的50% (58,500 港元)</p>
+                    <p class="text-gray-600 text-sm">
+                        <strong>說明:</strong> 本保障只支付1次賠償。於升級保障完結前或後之1個月內，您可以將升級保障轉換至一份我們指定並備有現金價值的全新壽險計劃，而毋須提供額外健康證明。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit Item: 嚴重疾病延伸保障 -->
+            <div class="card mb-4">
+                <div class="flex justify-between items-center cursor-pointer p-4" onclick="toggleDetails(this)">
+                    <h3 class="font-semibold text-lg text-gray-800">➕ 嚴重疾病延伸保障</h3>
+                    <span class="toggle-icon text-gray-600 text-2xl font-bold">+</span>
+                </div>
+                <div class="detail-content p-4 border-t border-gray-100 hidden">
+                    <p class="text-gray-700 mb-2"><strong>保障額:</strong> 於86歲(翌年歲)前確診癌症、心臟病發作、中風、阿耳滋海默氏症/不可還原之器質性腦退化疾病、柏金遜病及其他48項嚴重病況: 基本保額的100% (117,000 港元)。最高保障額可達基本保額的900%。</p>
+                    <p class="text-gray-600 text-sm">
+                        <strong>說明:</strong> 嚴重疾病保障已支付後，仍可就特定嚴重病況提出索償，惟需符合時間間隔要求。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit Item: 嚴重腦退化症或柏金遜病終身年金 -->
+            <div class="card mb-4">
+                <div class="flex justify-between items-center cursor-pointer p-4" onclick="toggleDetails(this)">
+                    <h3 class="font-semibold text-lg text-gray-800">🧠 嚴重腦退化症或柏金遜病終身年金</h3>
+                    <span class="toggle-icon text-gray-600 text-2xl font-bold">+</span>
+                </div>
+                <div class="detail-content p-4 border-t border-gray-100 hidden">
+                    <p class="text-gray-700 mb-2"><strong>保障額:</strong> 每年基本保額的6% (7,020 港元)</p>
+                    <p class="text-gray-600 text-sm">
+                        <strong>說明:</strong> 於嚴重疾病保障或嚴重疾病延伸保障已支付後，若確診嚴重腦退化症或柏金遜病，每年支付直至受保人身故為止。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit Item: 人壽延伸保障 -->
+            <div class="card mb-4">
+                <div class="flex justify-between items-center cursor-pointer p-4" onclick="toggleDetails(this)">
+                    <h3 class="font-semibold text-lg text-gray-800">🕊️ 人壽延伸保障</h3>
+                    <span class="toggle-icon text-gray-600 text-2xl font-bold">+</span>
+                </div>
+                <div class="detail-content p-4 border-t border-gray-100 hidden">
+                    <p class="text-gray-700 mb-2"><strong>保障額:</strong> 與首次確診嚴重病況相隔最少一年後並於86歲(翌年歲)前身故: 基本保額的100% (117,000 港元)</p>
+                    <p class="text-gray-600 text-sm">
+                        <strong>說明:</strong> 提供身故保障，即使在嚴重疾病保障支付後，若符合條件仍可獲得。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit Item: 保費豁免保障 -->
+            <div class="card mb-4">
+                <div class="flex justify-between items-center cursor-pointer p-4" onclick="toggleDetails(this)">
+                    <h3 class="font-semibold text-lg text-gray-800">💰 保費豁免保障</h3>
+                    <span class="toggle-icon text-gray-600 text-2xl font-bold">+</span>
+                </div>
+                <div class="detail-content p-4 border-t border-gray-100 hidden">
+                    <p class="text-gray-700 mb-2"><strong>保障內容:</strong></p>
+                    <ul class="list-disc list-inside text-gray-600 text-sm">
+                        <li>**早期危疾保費豁免保障:** 當早期嚴重疾病保障或嚴重兒童病況的兒童疾病保障賠償須支付及/或已付訖時，基本計劃往後12個月之到期保費總額將被豁免。</li>
+                        <li>**危疾保費豁免保障:** 當嚴重疾病保障賠償須支付及/或已付訖時，基本計劃日後的所有保費將被豁免。</li>
+                        <li>**親子保費豁免保障:** 當保單持有人或其於保單文件紀錄下之配偶身故時，由下一個保費到期日起直至受保人26歲(翌年歲)的所有基本計劃保費將被豁免。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Section: Medical Plan -->
+        <section class="w-full container card p-6 mb-8">
+            <h2 class="text-2xl font-bold section-title mb-4">附加保障: 終身保醫療計劃 (普通病房)</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                提供全面的醫療保障，讓您安心康復。點擊下方項目查看詳情。
+            </p>
+
+            <!-- Benefit Item: 住院保障 -->
+            <div class="card mb-4">
+                <div class="flex justify-between items-center cursor-pointer p-4" onclick="toggleDetails(this)">
+                    <h3 class="font-semibold text-lg text-gray-800">🛌 住院保障</h3>
+                    <span class="toggle-icon text-gray-600 text-2xl font-bold">+</span>
+                </div>
+                <div class="detail-content p-4 border-t border-gray-100 hidden">
+                    <p class="text-gray-700 mb-2"><strong>保障額:</strong></p>
+                    <ul class="list-disc list-inside text-gray-700 text-sm">
+                        <li>每日住院病房及膳食: 975 港元 (每日)</li>
+                        <li>醫生巡房: 780 港元 (每日)</li>
+                        <li>住院雜項開支: 9,750 港元 (每次住院)</li>
+                        <li>深切治療: 3,120 港元 (每日)</li>
+                        <li>專科醫生巡房: 2,730 港元 (每次住院)</li>
+                        <li>每日家屬額外床位: 585 港元 (每日)</li>
+                    </ul>
+                    <p class="text-gray-600 text-sm mt-2">
+                        <strong>說明:</strong> 每次住院以90日為限。涵蓋住院期間的各項費用。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit Item: 外科手術保障 -->
+            <div class="card mb-4">
+                <div class="flex justify-between items-center cursor-pointer p-4" onclick="toggleDetails(this)">
+                    <h3 class="font-semibold text-lg text-gray-800">🔪 外科手術保障</h3>
+                    <span class="toggle-icon text-gray-600 text-2xl font-bold">+</span>
+                </div>
+                <div class="detail-content p-4 border-t border-gray-100 hidden">
+                    <p class="text-gray-700 mb-2"><strong>保障額:</strong></p>
+                    <ul class="list-disc list-inside text-gray-700 text-sm">
+                        <li>外科手術費用: 39,000 港元 (每次住院)</li>
+                        <li>麻醉師費用: 應付外科手術費用的35%</li>
+                        <li>手術室費用: 應付外科手術費用的35%</li>
+                    </ul>
+                    <p class="text-gray-600 text-sm mt-2">
+                        <strong>說明:</strong> 涵蓋外科手術相關費用，包括手術費、麻醉費及手術室費用。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit Item: 訂明非手術癌症治療保障 -->
+            <div class="card mb-4">
+                <div class="flex justify-between items-center cursor-pointer p-4" onclick="toggleDetails(this)">
+                    <h3 class="font-semibold text-lg text-gray-800">🧪 訂明非手術癌症治療保障</h3>
+                    <span class="toggle-icon text-gray-600 text-2xl font-bold">+</span>
+                </div>
+                <div class="detail-content p-4 border-t border-gray-100 hidden">
+                    <p class="text-gray-700 mb-2"><strong>保障額:</strong> 14,625 港元 (每次住院)</p>
+                    <p class="text-gray-600 text-sm">
+                        <strong>說明:</strong> 涵蓋放射性治療、化療、標靶治療、免疫治療及荷爾蒙治療等訂明非手術癌症治療費用。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit Item: 緊急門診治療保障 -->
+            <div class="card mb-4">
+                <div class="flex justify-between items-center cursor-pointer p-4" onclick="toggleDetails(this)">
+                    <h3 class="font-semibold text-lg text-gray-800">🚑 緊急門診治療保障</h3>
+                    <span class="toggle-icon text-gray-600 text-2xl font-bold">+</span>
+                </div>
+                <div class="detail-content p-4 border-t border-gray-100 hidden">
+                    <p class="text-gray-700 mb-2"><strong>保障額:</strong> 5,460 港元 (每次受傷)</p>
+                    <p class="text-gray-600 text-sm">
+                        <strong>說明:</strong> 針對因意外發生24小時內接受治療的緊急門診費用。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit Item: 住院前及出院後保障 -->
+            <div class="card mb-4">
+                <div class="flex justify-between items-center cursor-pointer p-4" onclick="toggleDetails(this)">
+                    <h3 class="font-semibold text-lg text-gray-800">🚶‍♀️ 住院前及出院後保障</h3>
+                    <span class="toggle-icon text-gray-600 text-2xl font-bold">+</span>
+                </div>
+                <div class="detail-content p-4 border-t border-gray-100 hidden">
+                    <p class="text-gray-700 mb-2"><strong>保障額:</strong> 1,365 港元 (每次住院)；手術後每日家中護理: 585 港元 (每日)</p>
+                    <p class="text-gray-600 text-sm">
+                        <strong>說明:</strong> 提供住院前1次診治，及出院後起計60日內最多3次診治。手術後每日家中護理以15日為限。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit Item: 脊椎治療師/物理治療師診治 -->
+            <div class="card mb-4">
+                <div class="flex justify-between items-center cursor-pointer p-4" onclick="toggleDetails(this)">
+                    <h3 class="font-semibold text-lg text-gray-800">💆‍♀️ 脊椎治療師/物理治療師診治</h3>
+                    <span class="toggle-icon text-gray-600 text-2xl font-bold">+</span>
+                </div>
+                <div class="detail-content p-4 border-t border-gray-100 hidden">
+                    <p class="text-gray-700 mb-2"><strong>保障額:</strong> 390 港元 (每日)</p>
+                    <p class="text-gray-600 text-sm">
+                        <strong>說明:</strong> 您可於出院後的90日內，由註冊脊椎治療師或物理治療師作出每日1次的診治，並以10次為限。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit Item: 網絡診斷成像保障 -->
+            <div class="card mb-4">
+                <div class="flex justify-between items-center cursor-pointer p-4" onclick="toggleDetails(this)">
+                    <h3 class="font-semibold text-lg text-gray-800">📸 網絡診斷成像保障</h3>
+                    <span class="toggle-icon text-gray-600 text-2xl font-bold">+</span>
+                </div>
+                <div class="detail-content p-4 border-t border-gray-100 hidden">
+                    <p class="text-gray-700 mb-2"><strong>保障額:</strong> 9,750 港元 (每次病患/受傷)</p>
+                    <p class="text-gray-600 text-sm">
+                        <strong>說明:</strong> 涵蓋電腦斷層掃描(CT)、磁力共振掃描(MRI)、正電子放射斷層掃描(PET)等指定診斷成像檢測。需採用網絡醫療服務提供者建議及提供之網絡服務，並預先取得批核。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Optional Benefit: 額外醫療計劃 -->
+            <h3 class="text-xl font-bold text-gray-800 mt-6 mb-4">額外醫療計劃 (自選保障)</h3>
+            <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                <p class="text-lg font-semibold text-gray-800 mb-2">終身賠償保障額: 1,170,000 港元</p>
+                <p class="text-sm text-gray-600">
+                    <strong>說明:</strong> 此終身賠償保障額於受保人達75歲(下次生日年齡)後的首個保單週年日起生效，為額外醫療計劃下累算支付的金額設置絕對上限。
+                </p>
+            </div>
+
+            <!-- Benefit Item: 額外醫療經典保障 -->
+            <div class="card mb-4">
+                <div class="flex justify-between items-center cursor-pointer p-4" onclick="toggleDetails(this)">
+                    <h3 class="font-semibold text-lg text-gray-800">🌟 額外醫療經典保障</h3>
+                    <span class="toggle-icon text-gray-600 text-2xl font-bold">+</span>
+                </div>
+                <div class="detail-content p-4 border-t border-gray-100 hidden">
+                    <p class="text-gray-700 mb-2"><strong>總賠償限額:</strong> 97,500 港元 (每次受傷、病患或住院)</p>
+                    <p class="text-gray-600 text-sm">
+                        <strong>說明:</strong> 任何超出終身保醫療計劃應支付金額的合資格費用，將於此保障下支付80%應付金額的開支。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefit Item: 網絡額外保障 -->
+            <div class="card mb-4">
+                <div class="flex justify-between items-center cursor-pointer p-4" onclick="toggleDetails(this)">
+                    <h3 class="font-semibold text-lg text-gray-800">🌐 網絡額外保障</h3>
+                    <span class="toggle-icon text-gray-600 text-2xl font-bold">+</span>
+                </div>
+                <div class="detail-content p-4 border-t border-gray-100 hidden">
+                    <p class="text-gray-700 mb-2"><strong>總賠償限額:</strong> 195,000 港元 (每次受傷、病患或住院)</p>
+                    <p class="text-gray-600 text-sm">
+                        <strong>說明:</strong> 當合資格費用用於由網絡醫療服務提供者提供的治療，並預先取得批核時，將全數保障超出之開支。
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Value-added Services Section -->
+        <section class="w-full container card p-6 mb-8">
+            <h2 class="text-2xl font-bold section-title mb-4">增值服務</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-green-50 p-4 rounded-lg flex items-center">
+                    <span class="text-2xl feature-icon mr-3">👨‍⚕️</span>
+                    <p class="font-medium text-gray-700">「安心醫」 (第二醫療意見及海外醫療禮賓服務)</p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg flex items-center">
+                    <span class="text-2xl feature-icon mr-3">✍️</span>
+                    <p class="font-medium text-gray-700">「智安排」預設保單服務</p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg flex items-center">
+                    <span class="text-2xl feature-icon mr-3">💳</span>
+                    <p class="font-medium text-gray-700">醫療費用直付服務</p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg flex items-center">
+                    <span class="text-2xl feature-icon mr-3">🛣️</span>
+                    <p class="font-medium text-gray-700">綠色醫療通道服務</p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg flex items-center">
+                    <span class="text-2xl feature-icon mr-3">📞</span>
+                    <p class="font-medium text-gray-700">24小時全球緊急支援服務</p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg flex items-center">
+                    <span class="text-2xl feature-icon mr-3">🎁</span>
+                    <p class="font-medium text-gray-700">無索償獎賞</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action / Contact Section -->
+        <section class="w-full container card p-6 mb-8 text-center bg-red-100 border-l-4 border-red-500">
+            <h2 class="text-2xl font-bold section-title mb-4">立即諮詢您的專屬顧問</h2>
+            <p class="text-gray-700 mb-4">
+                此建議書須在印發日起30天內交回保誠方為有效。請盡快與我們聯絡，了解更多詳情。
+            </p>
+            <div class="text-lg font-semibold text-gray-800 mb-2">
+                顧問姓名: Paul Chang 曾芝博
+            </div>
+            <div class="text-lg font-semibold text-gray-800 mb-2">
+                顧問電郵地址: <a href="mailto:chipok.chang@prumacao.com" class="text-blue-600 hover:underline">chipok.chang@prumacao.com</a>
+            </div>
+            <div class="text-lg font-semibold text-gray-800 mb-4">
+                顧問電話號碼: <a href="tel:+85366501801" class="text-blue-600 hover:underline">+853 66501801</a>
+            </div>
+            <a href="mailto:chipok.chang@prumacao.com" class="btn-primary inline-block px-8 py-3 text-lg font-semibold">立即聯絡</a>
+        </section>
+
+        <!-- Footer / Disclaimer Section -->
+        <footer class="w-full container text-center text-sm text-gray-500 mt-4">
+            <p class="mb-2">此文件僅旨在澳門派發，並不能詮釋為在澳門境外提供或出售或游說購買任何保險產品。</p>
+            <p class="mb-2">有關本保障計劃條款及細則之詳情，請參閱保單條款。請閱讀載於產品小冊子的主要風險。</p>
+            <p class="mb-2">保誠保留根據申請人及/或受保人在投保時所提供的資料接受或拒絕申請的絕對權利。</p>
+            <p class="mb-2">*信貸評級截至2024年1月12日。</p>
+            <p>&copy; 2025 Prudential. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleDetails(headerElement) {
+            const detailContent = headerElement.nextElementSibling;
+            const toggleIcon = headerElement.querySelector('.toggle-icon');
+
+            // Toggle 'hidden' class for the detail content
+            if (detailContent.classList.contains('hidden')) {
+                detailContent.classList.remove('hidden');
+                // Use a small timeout to allow the 'hidden' class to be removed before adding 'open'
+                // This ensures the transition effect works correctly
+                setTimeout(() => {
+                    detailContent.classList.add('open');
+                }, 10); // Small delay
+                toggleIcon.textContent = '-';
+            } else {
+                detailContent.classList.remove('open');
+                // Use a small timeout to allow the 'open' class to be removed before adding 'hidden'
+                setTimeout(() => {
+                    detailContent.classList.add('hidden');
+                }, 300); // Match transition duration
+                toggleIcon.textContent = '+';
+            }
+        }
+    </script>
+</body>
+</html>
